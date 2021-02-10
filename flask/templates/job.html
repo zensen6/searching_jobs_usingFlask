@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+
+    <link href="https://andybrewer.github.io/mvp/mvp.css" rel="stylesheet"></link>
+    <style>
+    body{
+      width:100%;
+      height:100%;
+      align-items:center;
+      
+    }
+    div{
+      padding:20px;
+      align-items:center;
+    }
+    #box{
+      align-items:center;
+      padding:7px;
+      justify-contents: center;
+
+    }
+    </style>
+</head>
+<body>
+    <section>
+      <div id="box">
+        <h1>Remote Jobs</h1>
+        <h4>{{count}} {{language}} jobs found.</h4>
+        <h5>Export to csv</h5>
+        <h6>Go back</h6>
+      </div>
+    </section>
+    
+        {% for job in jobs %}
+          <div>
+            <h4>{{job.title}}</h4>
+            <h4>{{job.company}}</h4>
+            <h4><a href="{{job.link}}">Apply</a></h4>
+          </div>
+        {% endfor %}
+    
+</body>
+</html>
